@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  width: 100%;
+  height: 300px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container2{
+  width: 100%;
+  height: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inter
+{
+	color: black;
+	padding-left:42%;
+  font-size:18px;
+  float: left;
+	position: relative;
+	padding-top:15px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300px;
+	
 }
-
-.App-link {
-  color: #61dafb;
+.sec
+{
+	color: white;
+	padding-left:48%;
+	padding-top:60px;
+	font-size:46px;
+  font-family: 'Open Sans', sans-serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.income
+{
+height:16%;
+width:25%;
+background-color: #28b9b5;
+margin-left:40%;
+margin-top:2.1%;
+}
+.loss
+{
+height:16%;
+width:25%;
+background-color:#ff5049;
+margin-left:40%;
+margin-top:1.5%;
+}
+.left
+{
+padding-top:16px;
+padding-left:12px;
+font-family: 'Open Sans', sans-serif;
+font-size:13px;
+color: #444444;
+float:left;
+}
+.right
+{
+font-family: 'Open Sans', sans-serif;
+font-size:16px;
+color: #ffffff;
+padding-top:16px;
+float:right;
+padding-right:12px;
+}
+.second
+{
+	height:44px;
+	width:55px;
+	margin-top:20px;
+	margin-left:350px;
+	float:left;
+	border:none;
+	
+}
+.sele
+{
+	width:55px;
+	height:44px;
+	font-size:20px;
+	border:1px solid white;
+	color: inherit;
+}
+.tird
+{
+	height:44px;
+	width:555px;
+	margin-top:-46px;
+	margin-left:420px;
+	float:left;
+	border:none;
+}
+#inpu
+{
+	height:15px;
+	width:400px;
+	padding-left:12px;
+	border:1px solid white;
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;
+	color: inherit;
+    font-size: 14px;
+    padding: 12px 15px;	
+}
+.fort
+{
+	height:40px;
+	width:100px;
+	margin-top:-47px;
+	float:right;
+	border:1px none;
+	margin-right:400px;
+}
+.selee
+{
+	width:100px;
+	height:40px;
+	font-size:20px;
+	border:1px solid white;
+	padding-left:10px;
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;	
+	color: inherit;
+}
+.five
+{
+	float:right;
+	margin-top:-42px;
+	margin-right:380px;
+}
+.container{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url("pubgback.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+   
+    position: relative;
+}
+.incomess
+{
+	float:left;
+	width:38%;
+	height:100%;
+	text-align:center;
+	color: #28B9B5;
+	font-size: 18px;
+	font-weight: 400;
+	margin-left: 200px;
+	margin-top: 70px;
+}
+.expensess
+{
+	width:38%;
+	height:100%;
+	padding-right:-500px;
+	color: #FF5049;
+	font-size: 18px;
+    font-weight: 400;
+	float:right;
+	margin-right: 100px;
+	margin-top: 70px;
+}
+.income__list{
+	margin-top: 25px;
+}
+.expenses__list{
+	
 }
