@@ -10,8 +10,7 @@ Finally have to submit the iputs and the interface will show the total income an
 
 # Screenshot
 
-
-
+![Web_Photo_Editor (1)](https://user-images.githubusercontent.com/64644506/98085570-87b1a180-1ea3-11eb-89fd-bc4d3fadd0ea.jpg)
 
 
 # Quick Start
