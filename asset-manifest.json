@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/sec-app/static/css/main.54446425.chunk.css",
+    "main.js": "/sec-app/static/js/main.277d984e.chunk.js",
+    "main.js.map": "/sec-app/static/js/main.277d984e.chunk.js.map",
+    "runtime-main.js": "/sec-app/static/js/runtime-main.2a0ebf84.js",
+    "runtime-main.js.map": "/sec-app/static/js/runtime-main.2a0ebf84.js.map",
+    "static/js/2.9afc71e7.chunk.js": "/sec-app/static/js/2.9afc71e7.chunk.js",
+    "static/js/2.9afc71e7.chunk.js.map": "/sec-app/static/js/2.9afc71e7.chunk.js.map",
+    "index.html": "/sec-app/index.html",
+    "precache-manifest.146c8a591c84fa3deb15ef0089373f45.js": "/sec-app/precache-manifest.146c8a591c84fa3deb15ef0089373f45.js",
+    "service-worker.js": "/sec-app/service-worker.js",
+    "static/css/main.54446425.chunk.css.map": "/sec-app/static/css/main.54446425.chunk.css.map",
+    "static/js/2.9afc71e7.chunk.js.LICENSE.txt": "/sec-app/static/js/2.9afc71e7.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/sec-app/static/media/wolfgang-hasselmann-pVr6wvUneMk-unsplash.fb8514c1.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2a0ebf84.js",
+    "static/js/2.9afc71e7.chunk.js",
+    "static/css/main.54446425.chunk.css",
+    "static/js/main.277d984e.chunk.js"
+  ]
+}
