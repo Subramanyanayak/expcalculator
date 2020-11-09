@@ -19,30 +19,21 @@ class Second extends Component {
 //if inc then exp if exp then inc
 if (this.state.op2 === '') {
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
-  console.log('second');
 }
 else{
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
-  console.log('first');
 }
 
-    
   }
 
 
       onChange = (e) =>{
 if (this.state.op2 === 'exp2') {
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
-  console.log('working');
 }
 else
 {
   this.setState({ [e.target.name]: e.currentTarget.value });
-  console.log('not working');
-  console.log(this.state.value);
-
-
-  
 }
 
 
@@ -54,7 +45,7 @@ else
 
       onClick = (e) =>{
 
-        if (this.state.op2 !== 'exp2' && this.state.description !== '') {
+        if (this.state.op2 !== 'exp2' && this.state.description !== '' && this.state.value !== '') {
           let i = parseInt(this.state.income) + parseInt(this.state.value);
           console.log(i);
                     this.setState({ income: i }, () => {
@@ -62,10 +53,6 @@ else
                       this.props.addFinal(this.state.income);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
-                      console.log(this.state.description);
-                      console.log(this.state.value);
-                      console.log(this.state.op);
-                      console.log(this.state.income);//function
                       this.setState({
                         description: '',
                         value: '',
@@ -74,28 +61,21 @@ else
                       });
                     });
                   }
-                  else if(this.state.op2 === 'exp2' && this.state.description2 !== ''){
+                  else if(this.state.op2 === 'exp2' && this.state.description2 !== '' && this.state.value2 !== ''){
                     let j = parseInt(this.state.expense) + parseInt(this.state.value2);
                     this.setState({ expense: j }, () => {
                       this.props.addTrans2(this.state.description2, this.state.value2, this.state.op2);
                       this.props.addFinal2(this.state.expense);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
+                      this.setState({
+                        description: '',
+                        value: '',
+                        description2: '',
+                        value2: '',
+                      });
                     });
-                    console.log(this.state.expense);
-                    console.log(this.state.value2 + 'two');
                   }
-       // this.state.op2 !== 'exp2'? //here also
-       // this.props.addTrans(this.state.description, this.state.value, this.state.op, this.state.income):this .props.addTrans2(this.state.description2, this.state.value2, this.state.op2)
-        console.log(this.state.description);
-        console.log(this.state.value);
-        console.log(this.state.op);
-        console.log(this.state.description2);
-        console.log(this.state.value2);
-        console.log(this.state.op2);
-        console.log(this.state.income);
-       
-       
       }
 
     render(){
@@ -111,10 +91,10 @@ else
             </select>
         </div>
         <div className="tird">
-            <input type="text" name="description" id="inpu" placeholder="Add description" onChange={this.onChange} />
+            <input type="text" name="description" id="inpu" placeholder="Add description" defaultValue="" onChange={this.onChange} />
         </div>
         <div className="fort">
-        <input type="number" name="value" class="selee" placeholder="Value" onChange={this.onChange} />
+        <input type="number" name="value" class="selee" placeholder="Value" defaultValue="" onChange={this.onChange} />
         </div>
         <div className="five">
         <input type="button" value="" onClick={this.onClick} id="btn"/>
@@ -127,10 +107,10 @@ else
    
         {this.props.calc.map((arr) => (
 
-            <div style={this.state.income !== 0? instyle : console.log('nul')} className="profit">
+            <div style={this.state.income !== 0 ? instyle : console.log('nul')} className="profit">
       
             <p style={{float:'left', padding: '10px', fontSize: '16px', color: '#555'}}> {arr.desc} </p>
-             <p style={{ padding: '10px', paddingLeft: '330px', fontSize: '16px'}}>{arr.value}</p>
+             <p style={{ padding: '10px', paddingLeft: '330px', fontSize: '16px'}} id="vaal">{arr.value}</p>
             
              {arr.desc !== ''?
             <button onClick={this.props.delDesc.bind(this, arr.id)} style={btnStyle} className="btn">x</button>: console.log('')  }

@@ -50,17 +50,8 @@ class Sec extends Component {
   delDesc = (id, e) => {
     this.setState({ des: [...this.state.des.filter(des => des.id !== id)] });
     console.log(id);
-    e.preventDefault();//delete id value from income
-   // var ind = this.state.des.findIndex(des => des.id === id);
-   // this.state.des[0].id
-   // this.setState({ income: this.state.income - this.state.des.findIndex(des => des.id === id)});
+    e.preventDefault();
    var sk = this.state.des.filter(des => des.id === id);
-   console.log(parseInt(sk.value));
-   console.log(sk);
-   console.log(parseInt(sk[0].value));
-   var vik = this.state.income - sk[0].value;
-   console.log(vik);
-   console.log(this.state.income);
    this.setState( { income: this.state.income - parseInt(sk[0].value)});
    let t2 = this.state.expense > this.state.income ?
    parseInt(this.state.total) - parseInt(sk[0].value): parseInt(this.state.total) - parseInt(sk[0].value);
@@ -70,16 +61,9 @@ class Sec extends Component {
   }
   delDesc2 = (id, e) => {
     this.setState({ des2: [...this.state.des2.filter(des2 => des2.id !== id)] });
-    console.log(id);
     e.preventDefault();
 
     var sk2 = this.state.des2.filter(des2 => des2.id === id);
-   console.log(parseInt(sk2.value));
-   console.log(sk2);
-   console.log(parseInt(sk2[0].value));
-   var vik2 = this.state.expense - sk2[0].value2;
-   console.log(vik2);
-   console.log(this.state.expense);
    this.setState( { expense: this.state.expense - parseInt(sk2[0].value2)});
 
    let t2 = this.state.expense > this.state.income ?
@@ -90,7 +74,6 @@ class Sec extends Component {
   }
 
   addTrans = (des, val, o, i) =>{
-    console.log(des, val, o, i);
     const newDes = {
       id: uuid(),
       op: o,
@@ -102,11 +85,9 @@ class Sec extends Component {
 
     }
     this.setState({ des: [...this.state.des, newDes]});
-    console.log(i);
   }
 
   addTrans2 = (des2, val2, o2) =>{
-    console.log(des2, val2, o2);
     var newDes2 = {
       id: uuid(),
       op2: o2,
@@ -123,12 +104,10 @@ class Sec extends Component {
     <div>
       <form className="container">
         <div className="inter">
-        </div>
-        <div className="inter">
         <p id="yek">Available Budget in {month} {date}: </p>
         </div>
         <div className="sec">
-  <           label id="lbl2">{this.state.total}.00</label>
+  <label id="lbl2">{this.state.total}.00</label>
         </div>
         <div className="income">
             <div className="left">income</div>
@@ -147,10 +126,8 @@ class Sec extends Component {
   }
 }
 var date = new Date().getFullYear();
-console.log(date);
 const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const d =new Date();
 var month = monthNames[d.getMonth()];
-console.log(month);
 
 export default Sec;
