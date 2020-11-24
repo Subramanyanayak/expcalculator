@@ -10,7 +10,7 @@ class Second extends Component {
     description2: '',
     value2: '',
     op2: '',
-    income: 0,
+    income: this.props.income,
     expense: 0
   }
 
@@ -19,21 +19,29 @@ class Second extends Component {
 //if inc then exp if exp then inc
 if (this.state.op2 === '') {
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
+  this.setState({income: this.props.income});
+  this.setState({expense: this.props.expense});
 }
 else{
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
+  this.setState({income: this.props.income});
+  this.setState({expense: this.props.expense});
 }
 
   }
 
 
-      onChange = (e) =>{
+      onChange = (e, props) =>{
 if (this.state.op2 === 'exp2') {
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
+  this.setState({expense: this.props.expense});
+  this.setState({income: this.props.income});
 }
 else
 {
   this.setState({ [e.target.name]: e.currentTarget.value });
+  this.setState({expense: this.props.expense});
+  this.setState({income: this.props.income});
 }
 
 
@@ -53,6 +61,7 @@ else
                       this.props.addFinal(this.state.income);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
+                      console.log(this.state.income);
                       this.setState({
                         description: '',
                         value: '',
@@ -68,6 +77,7 @@ else
                       this.props.addFinal2(this.state.expense);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
+                      console.log(this.state.expense);
                       this.setState({
                         description: '',
                         value: '',
@@ -124,7 +134,7 @@ else
     
         </div>
         <div className="expensess">
-            <h3 id="ex1">EXPENSES</h3>
+        <h3 id="ex1">EXPENSES</h3>
 
         
         <div className="expenses__list">

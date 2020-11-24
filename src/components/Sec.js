@@ -49,15 +49,17 @@ class Sec extends Component {
 
   delDesc = (id, e) => {
     this.setState({ des: [...this.state.des.filter(des => des.id !== id)] });
-    console.log(id);
     e.preventDefault();
    var sk = this.state.des.filter(des => des.id === id);
    this.setState( { income: this.state.income - parseInt(sk[0].value)});
    let t2 = this.state.expense > this.state.income ?
    parseInt(this.state.total) - parseInt(sk[0].value): parseInt(this.state.total) - parseInt(sk[0].value);
-   this.setState({
-    total: t2
-  });
+  this.setState({
+   total: t2}, () => {return this.state.total}
+  );
+  
+  console.log(this.state.total);
+  console.log(this.state.income);
   }
   delDesc2 = (id, e) => {
     this.setState({ des2: [...this.state.des2.filter(des2 => des2.id !== id)] });
@@ -118,9 +120,8 @@ class Sec extends Component {
             <div className="right"><b>+ {this.state.expense}.00</b></div>
         </div>
 
-
     </form>
-      <Second delDesc={this.delDesc} delDesc2={this.delDesc2} calc={this.state.des} calc2={this.state.des2} addTrans={this.addTrans} addTrans2={this.addTrans2} addFinal={this.addFinal} addFinal2={this.addFinal2} addTotal={this.addTotal}    />
+      <Second income={this.state.income} expense={this.state.expense} delDesc={this.delDesc} delDesc2={this.delDesc2} calc={this.state.des} calc2={this.state.des2} addTrans={this.addTrans} addTrans2={this.addTrans2} addFinal={this.addFinal} addFinal2={this.addFinal2} addTotal={this.addTotal}    />
     </div>
   );
   }
