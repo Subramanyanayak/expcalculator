@@ -58,8 +58,6 @@ class Sec extends Component {
    total: t2}, () => {return this.state.total}
   );
   
-  console.log(this.state.total);
-  console.log(this.state.income);
   }
   delDesc2 = (id, e) => {
     this.setState({ des2: [...this.state.des2.filter(des2 => des2.id !== id)] });

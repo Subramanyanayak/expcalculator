@@ -14,8 +14,6 @@ class Second extends Component {
   }
 
   opOnchange = (e) =>{
-    //have to toggle 
-//if inc then exp if exp then inc
 if (this.state.op2 === '') {
   this.setState({ [e.target.name + 2]: e.currentTarget.value });
   this.setState({income: this.props.income});
@@ -41,12 +39,7 @@ else
   this.setState({ [e.target.name]: e.currentTarget.value });
   this.setState({expense: this.props.expense});
   this.setState({income: this.props.income});
-}
-
-
-        //this.state.op2 !== 'exp2'?//tell me exactly what should be the condition here , i have tried many:|
-        //this.setState({ [e.target.name]: e.target.value }):this.setState({ [e.target.name + 2]
-         // : e.target.value });
+}      
         
       }
 
@@ -54,13 +47,11 @@ else
 
         if (this.state.op2 !== 'exp2' && this.state.description !== '' && this.state.value !== '') {
           let i = parseInt(this.state.income) + parseInt(this.state.value);
-          console.log(i);
                     this.setState({ income: i }, () => {
                       this.props.addTrans(this.state.description, this.state.value, this.state.op, this.state.income);
                       this.props.addFinal(this.state.income);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
-                      console.log(this.state.income);
                       this.setState({
                         description: '',
                         value: '',
@@ -76,7 +67,6 @@ else
                       this.props.addFinal2(this.state.expense);
                       let t = parseInt(this.state.income) - parseInt(this.state.expense);
                       this.props.addTotal(t);
-                      console.log(this.state.expense);
                       this.setState({
                         description: '',
                         value: '',
